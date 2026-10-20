@@ -16,9 +16,15 @@ def check_password(password):
 
     if has_upper and has_lower and has_digit and has_special:
         return "Password is valid."
-
-    return "Password does not meet all requirements."
-
+    else:
+        if not has_upper:
+            return "Password must contain at least one uppercase letter."
+        if not has_lower:
+            return "Password must contain at least one lowercase letter."
+        if not has_digit:
+            return "Password must contain at least one digit."
+        if not has_special:
+            return "Password must contain at least one special character."
 
 password = input("Enter a password: ")
 result = check_password(password)
